@@ -72,6 +72,41 @@
   --font-sora: var(--font-sora);
   --font-inter: var(--font-inter);
   --font-mono: var(--font-mono);
+
+  /* Animations */
+  --animate-float1: float-1 9s ease-in-out infinite;
+  --animate-float2: float-2 11s ease-in-out infinite;
+  --animate-float3: float-3 7s ease-in-out infinite;
+}
+
+@keyframes float-1 {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(40px, 30px, 0);
+  }
+}
+
+@keyframes float-2 {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-30px, 40px, 0);
+  }
+}
+
+@keyframes float-3 {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(20px, -20px, 0) scale(1.1);
+  }
 }
 
 body {
@@ -87,6 +122,26 @@ a {
 
 a:hover {
   color: var(--text);
+}
+
+.grid-lines {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 15%,
+    black 85%,
+    transparent
+  );
+  --webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 15%,
+    black 85%,
+    transparent
+  );
 }
 
 @theme inline {

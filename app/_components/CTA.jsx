@@ -1,14 +1,15 @@
 import Link from "next/link";
 
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+
+import { Button } from "@/components/ui/button";
 
 const CTA = ({ href, variant, className, children }) => {
   return (
     <Button
       asChild
       variant={variant}
-      className={cn("transition-all duration-300", className)}
+      className={cn("transition-all duration-300 cursor-pointer", className)}
     >
       <Link href={href}>{children}</Link>
     </Button>

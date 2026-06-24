@@ -1,10 +1,12 @@
 "use client";
 
+import { useEffect, useState } from "react";
+
+import { cn } from "@/lib/utils";
+
 import Logo from "@/app/_components/Logo";
 import NavLink from "@/app/_components/NavLinks";
 import CTA from "@/app/_components/CTA";
-import { useEffect, useState } from "react";
-import { cn } from "@/lib/utils";
 
 const HeaderNav = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -32,7 +34,7 @@ const HeaderNav = () => {
 
       <div className="hidden md:flex justify-center items-center gap-6 lg:gap-10">
         {/* Nav Links */}
-        <div className="flex justify-center items-center gap-6 lg:gap-10 font-medium text-sm">
+        <div className="flex justify-center items-center gap-6 lg:gap-10">
           <NavLink href="#features">Features</NavLink>
           <NavLink href="#workflow">Workflow</NavLink>
           <NavLink href="#preview">Product</NavLink>
@@ -54,7 +56,7 @@ const HeaderNav = () => {
           <CTA
             href={"/register"}
             variant="default"
-            className="h-8 w-26 lg:h-9 lg:w-36 bg-(--indigo) hover:bg-(--indigo)/90 text-xs lg:text-sm border-none rounded-md"
+            className="h-8 w-26 lg:h-9 lg:w-36 bg-linear-to-br from-(--indigo) to-[#4f46e5] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(99,102,241,0.35)] text-xs lg:text-sm border-none rounded-md"
           >
             Get started free
           </CTA>
