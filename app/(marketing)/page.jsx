@@ -1,5 +1,5 @@
-import HeaderNav from "./_components/DashboardNav/HeaderNav";
-import Background from "./_components/Hero/Background";
+import HeaderNav from "./_components/MarketingNav/HeaderNav";
+import Hero from "./_components/Hero/Hero";
 
 export default function Home() {
   return (
@@ -8,9 +8,7 @@ export default function Home() {
       <HeaderNav />
 
       {/* Hero */}
-      <section className="min-h-screen flex items-center pt-16 overflow-hidden relative">
-        <Background />
-      </section>
+      <Hero />
     </div>
   );
 }

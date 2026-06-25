@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 
 import { cn } from "@/lib/utils";
 
-import Logo from "@/app/_components/Logo";
-import NavLink from "@/app/_components/NavLinks";
-import CTA from "@/app/_components/CTA";
+import Logo from "@/components/common/Logo";
+import NavLink from "@/components/common/NavLinks";
+import CTA from "@/components/common/CTA";
 
 const HeaderNav = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -49,7 +49,7 @@ const HeaderNav = () => {
           <CTA
             href={"/login"}
             variant="default"
-            className="h-8 w-16 lg:h-9 lg:w-18 border-2 border-(--border2) rounded-md bg-(--bg) hover:bg-(--surface) text-xs lg:text-sm"
+            className="h-8 w-16 lg:h-9 lg:w-18 border-2 border-(--border2) rounded-md bg-transparent  hover:bg-[rgba(255,255,255,0.04)] hover:border-[rgba(255,255,255,0.22)] text-xs lg:text-sm"
           >
             Log in
           </CTA>
