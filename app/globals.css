@@ -65,6 +65,10 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
+@utility text-hero {
+  font-size: clamp(2.6rem, 4.5vw, 3.8rem);
+}
+
 @theme {
   /* Fonts */
   --font-sora: var(--font-sora);
@@ -76,6 +80,12 @@
   --animate-float2: float-2 11s ease-in-out infinite;
   --animate-float3: float-3 7s ease-in-out infinite;
   --animate-blink: blink 2s ease-in-out infinite;
+  --animate-card-float: cardFloat 6s ease-in-out infinite;
+  --animate-pill-float1: pillFloat1 5s ease-in-out infinite;
+  --animate-pill-float2: pillFloat2 7s ease-in-out infinite;
+
+  /* CSS Breakpoints */
+  --breakpoint-xs: 22.5rem;
 }
 
 @keyframes float-1 {
@@ -118,6 +128,36 @@
   }
 }
 
+@keyframes cardFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-0.5deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(0.5deg);
+  }
+}
+
+@keyframes pillFloat1 {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@keyframes pillFloat2 {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(7px);
+  }
+}
+
 body {
   background: var(--bg);
   color: var(--text);
@@ -151,6 +191,9 @@ a:hover {
     black 85%,
     transparent
   );
+}
+
+.visual-glow {
 }
 
 @theme inline {
