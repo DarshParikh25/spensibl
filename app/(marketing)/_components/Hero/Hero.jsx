@@ -4,7 +4,7 @@ import HeroVisual from "./HeroVisual";
 
 const Hero = () => {
   return (
-    <section className="min-h-screen w-full flex items-center pt-16 overflow-hidden relative">
+    <section className="relative min-h-screen w-full flex items-center pt-16 overflow-hidden">
       {/* Hero Background */}
       <Background />
 

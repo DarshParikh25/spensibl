@@ -1,7 +1,6 @@
-import { Sparkles } from "lucide-react";
-import { Lightbulb } from "lucide-react";
+import { Sparkles, Lightbulb } from "lucide-react";
 
-import VisualPill from "./VisualPill";
+import VisualPill from "@/components/common/VisualPill";
 import VisualCard from "./VisualCard";
 
 const HeroVisual = () => {

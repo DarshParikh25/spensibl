@@ -4,11 +4,11 @@ import IconBadge from "@/components/common/IconBadge";
 
 const MiniTransactionCard = ({
   icon,
-  name,
+  title,
   cat,
   type,
   amount,
-  bgColor,
+  iconBg,
   iconColor,
 }) => {
   return (
@@ -18,11 +18,11 @@ const MiniTransactionCard = ({
           icon={icon}
           width={2}
           size={16}
-          bgColor={bgColor}
+          iconBg={iconBg}
           iconColor={iconColor}
         />
         <div className="flex flex-col justify-center gap-1">
-          <div className="text-xs font-medium">{name}</div>
+          <div className="text-xs font-medium">{title}</div>
           <div className="text-[11px] text-(--muted)">{cat}</div>
         </div>
       </div>

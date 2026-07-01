@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 
 import { cn } from "@/lib/utils";
+import { navlinks } from "@/data/navLinks";
 
 import Logo from "@/components/common/Logo";
 import NavLink from "@/components/common/NavLinks";
@@ -33,14 +34,14 @@ const HeaderNav = () => {
         {/* Logo */}
         <Logo />
 
-        <div className="flex justify-center items-center gap-6 lg:gap-10">
+        <div className="flex justify-center items-center gap-4 lg:gap-10">
           {/* Nav Links */}
           <div className="hidden md:flex justify-center items-center gap-6 lg:gap-10">
-            <NavLink href="#features">Features</NavLink>
-            <NavLink href="#workflow">Workflow</NavLink>
-            <NavLink href="#preview">Product</NavLink>
-            <NavLink href="#pricing">Pricing</NavLink>
-            <NavLink href="#testimonials">Reviews</NavLink>
+            {navlinks.map(({ href, label }, index) => (
+              <NavLink key={index} href={href}>
+                {label}
+              </NavLink>
+            ))}
           </div>
 
           <span className="hidden md:inline h-5 lg:h-6 w-px bg-muted"></span>
@@ -50,14 +51,14 @@ const HeaderNav = () => {
             <CTA
               href={"/login"}
               variant="default"
-              className="px-4 h-8 sm:h-9 border border-(--border2) rounded-md bg-transparent hover:bg-[rgba(255,255,255,0.04)] hover:border-[rgba(255,255,255,0.22)] text-xs sm:text-sm"
+              className="px-4 h-8 sm:h-9 border border-(--border2) rounded-md bg-transparent hover:bg-[rgba(255,255,255,0.04)] hover:border-[rgba(255,255,255,0.22)] text-xs sm:text-[13px]"
             >
               Log in
             </CTA>
             <CTA
               href={"/register"}
               variant="default"
-              className="px-4 h-8 sm:h-9 bg-linear-to-br from-(--indigo) to-[#4f46e5] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(99,102,241,0.35)] text-xs sm:text-sm border-none rounded-md"
+              className="px-4 h-8 sm:h-9 bg-linear-to-br from-(--indigo) to-[#4f46e5] hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(99,102,241,0.35)] text-xs sm:text-[13px] border-none rounded-md"
             >
               Get started free
             </CTA>

@@ -1,5 +1,6 @@
 import HeaderNav from "./_components/MarketingNav/HeaderNav";
 import Hero from "./_components/Hero/Hero";
+import Assembly from "./_components/Assembly/Assembly";
 
 export default function Home() {
   return (
@@ -9,6 +10,9 @@ export default function Home() {
 
       {/* Hero */}
       <Hero />
+
+      {/* Assembly */}
+      <Assembly />
     </div>
   );
 }

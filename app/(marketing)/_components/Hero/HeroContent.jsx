@@ -1,19 +1,18 @@
-import { ArrowRight, Lock, Play, ShieldCheck, Zap } from "lucide-react";
+import { ArrowRight, Play } from "lucide-react";
+
+import { footnotes } from "@/data/footNotes";
 
 import CTA from "@/components/common/CTA";
+import TitlePill from "@/components/common/TitlePill";
 
 const HeroContent = () => {
   return (
     <div className="flex flex-col justify-center items-start gap-6">
       {/* Hero Eyebrow */}
-      <div className="w-fit uppercase inline-flex justify-center items-center border border-(--border2) rounded-full px-4 py-1.5 text-[10px] sm:text-xs font-inter gap-2 text-(--cyan) bg-[rgba(99, 102, 241, 0.07)] font-semibold tracking-wider">
-        {/* Hero Dot */}
-        <span className="inline-flex w-1.25 h-1.25 bg-(--cyan) rounded-full animate-blink"></span>
-        Personal Finance, Reimagined
-      </div>
+      <TitlePill>Smarter Money Management</TitlePill>
 
       {/* Hero Head */}
-      <h1 className="text-hero tracking-tighter leading-14 font-extrabold text-balance">
+      <h1 className="text-hero tracking-tighter leading-12 sm:leading-14 font-extrabold text-balance">
         Take back{" "}
         <span className="bg-linear-to-br from-(--indigo) to-(--cyan) bg-clip-text text-transparent">
           control
@@ -22,10 +21,8 @@ const HeroContent = () => {
       </h1>
 
       {/* Hero Sub */}
-      <p className="font-inter text-[1.05rem] text-(--muted2) leading-7 max-w-115">
-        {`Every account, every card, every wallet — tracked, categorized, and
-        understood. Spensibl gives you a complete picture of your finances, so
-        you're always the one in charge.`}
+      <p className="font-inter text-[1.05rem] text-(--muted2) leading-7 text-balance">
+        {`Spensibl brings all your accounts, expenses budgets and insights together in one place, giving you a complete picture of your finances — so you're always the one in charge.`}
       </p>
 
       {/* Hero actions */}
@@ -56,15 +53,12 @@ const HeroContent = () => {
 
       {/* Hero Footnote */}
       <p className="font-inter text-xs text-(--muted) tracking-wide flex flex-col sm:flex-row justify-baseline items-baseline sm:items-center gap-3">
-        <span className="flex justify-center items-center gap-1">
-          <Lock size={12} /> No credit card needed
-        </span>
-        <span className="flex justify-center items-center gap-1">
-          <Zap size={12} /> Live in 2 minutes
-        </span>
-        <span className="flex justify-center items-center gap-1">
-          <ShieldCheck size={12} /> Bank-grade encryption
-        </span>
+        {footnotes.map(({ icon: Icon, text }, index) => (
+          <span key={index} className="flex justify-center items-center gap-1">
+            <Icon size={12} />
+            {text}
+          </span>
+        ))}
       </p>
     </div>
   );
